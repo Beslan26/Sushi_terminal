@@ -1,0 +1,209 @@
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 80px 100px;
+    position: relative;
+    background-color: #ffffff;
+  }
+  
+  .screen .view {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .screen .div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+  }
+  
+  .screen .text-wrapper {
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 50px;
+    position: relative;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .screen .text-wrapper-2 {
+    align-self: stretch;
+    opacity: 0.6;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    position: relative;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .screen .fi-x {
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .screen .view-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .screen .text-wrapper-3 {
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    white-space: nowrap;
+    position: relative;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .screen .text-wrapper-4 {
+    position: relative;
+    align-self: stretch;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .screen .div-2 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .screen .div-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 52px;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 8px;
+    padding: 8px 15px;
+    position: relative;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+  
+  .screen .suggestion {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    position: relative;
+    align-self: stretch;
+    flex: 0 0 auto;
+    background-color: #ffe292;
+    border-radius: 5px;
+  }
+  
+  .screen .text-wrapper-5 {
+    width: fit-content;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .screen .view-3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .screen .text-wrapper-6 {
+    position: relative;
+    width: 350px;
+    margin-top: -1px;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .screen .view-4 {
+    display: flex;
+    width: 350px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 15px;
+    position: relative;
+    align-self: stretch;
+    color: #ffffff;
+    border-color: #2ebf91;
+    background-color: #2ebf91;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .screen .input-content {
+    font-size: 22px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 60px;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 8px;
+    padding: 5px 15px;
+    position: relative;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+
+  .screen .text-wrapper-7 {
+    width: fit-content;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  

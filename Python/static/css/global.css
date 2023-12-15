@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'SFProDisplayRegular';
+    src: url('/fonts/SFProDisplayRegular.otf') format('opentype'); /* Замените путь и формат на фактические */
+    font-weight: normal;
+    font-style: normal;
+}

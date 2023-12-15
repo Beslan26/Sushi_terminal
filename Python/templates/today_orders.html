@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>История заказов</title>
+    <link rel="stylesheet" href="static/css/global.css" />
+    <link rel="stylesheet" href="static/css/style2.css" />
+</head>
+<body>
+    <div class="screen">
+        <div class="view">
+          <div class="div">
+            <div class="text-wrapper">Заказы | <span id="currentDate"></span></div>
+            <script>
+              const currentDateElement = document.getElementById("currentDate");
+              const currentDate = new Date();
+            
+              // Опции для форматирования даты
+              const options = { day: 'numeric', month: 'long' };
+            
+              // Форматируем дату
+              const formattedDate = currentDate.toLocaleDateString('ru-RU', options);
+            
+              currentDateElement.textContent = formattedDate;
+            </script>
+            <div class="text-wrapper-2">Суши Байрам 👋</div>
+          </div>
+          <div class="view-2">
+            <div class="plus-outline">
+              <a href="/">
+                <img class="vector" src="static/img/vector.svg" />
+              </a>
+            </div>
+            <a href="/">
+              <div class="frame"><div class="text-wrapper-3">Новый заказ</div></div>
+            </a>
+          </div>
+        </div>
+
+      
+    <table>
+        <tr>
+            <th class="text-wrapper-4">Номер</th>
+            <th class="text-wrapper-4">Телефон</th>
+            <th class="text-wrapper-4">Заказ</th>
+            <th class="text-wrapper-4">Гостей</th>
+            <th class="text-wrapper-4">Адрес</th>
+            <th class="text-wrapper-4">Общая стоимость</th>
+            <th class="text-wrapper-4">Метод оплаты</th>
+            <th class="text-wrapper-4">Статус оплаты</th>
+            <th class="text-wrapper-4">Дата и время</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td class="text-wrapper-5">{{ order.id }}</td>
+            <td class="text-wrapper-5">{{ order.phone }}</td>
+            <td class="text-wrapper-5">{{ order.menu_items }}</td>
+            <td class="text-wrapper-5">{{ order.num_clients }}</td>
+            <td class="text-wrapper-5">{{ order.address }}</td>
+            <td class="text-wrapper-5">{{ order.total_cost }} руб.</td>
+            <td class="text-wrapper-5">{{ order.payment_method }}</td>
+            <!-- ... (ваш существующий HTML-код) ... -->
+            <td class="text-wrapper-5">
+              {% if not order.payment_status %}
+                <span id="paymentStatus-{{ order.id }}"></span>
+                <a class="frame" href="http://127.0.0.1:5000/today_orders" onclick="changePaymentStatus({{ order.id }}, '{{ url_for('change_payment_status') }}')">Оплатили</a>
+              {% else %}
+                Оплачено
+              {% endif %}
+            </td>
+            <!-- ... (ваш существующий HTML-код) ... -->
+            <td class="text-wrapper-5">{{ order.timestamp }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Вернуться к заказу</a>
+    </div>
+
+    
+    <<script>
+  function changePaymentStatus(orderId, endpoint) {
+      // Отправляем AJAX-запрос на сервер для изменения статуса
+      fetch(`${endpoint}?orderId=${orderId}`)
+          .then(response => response.json())
+          .then(data => {
+              // Обновляем значение в ячейке
+              document.getElementById(`paymentStatus-${orderId}`).textContent = data.newPaymentStatus;
+
+              // Перезагружаем страницу
+              location.reload();
+          })
+          .catch(error => console.error('Error:', error));
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Заказ доставки</title>
+    <link rel="stylesheet" href="static/css/global.css" />
+    <link rel="stylesheet" href="static/css/styleguide.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <div class="view">
+        <div class="div">
+          <div class="text-wrapper">Новый заказ</div>
+          <div class="text-wrapper-2">Суши Байрам 👋</div>
+        </div>
+        <a href="today_orders">
+          <img class="fi-x" src="static/img/fi-x.svg" />
+        </a>
+      </div>
+      <form action="/" method="post">
+        <div>
+          <label for="tel_input">Телефон:</label>
+          <input class="input-content" type="text" id="tel_input" name="tel_input" required><br>
+        </div>
+        <label for="menu_input">Заказ (разделяйте запятой):</label>
+        <input class="input-content" type="text" id="menu_input" name="menu_input" required><br>
+        
+        <label for="clientsnumber_input">На сколько человек:</label>
+        <input class="input-content" type="text" id="clientsnumber_input" name="clientsnumber_input" required><br>
+        
+        <label for="address_input">Адрес:</label>
+        <input class="input-content" type="text" id="address_input" name="address_input" required><br>
+
+        <label for="method_input">Метод оплаты:</label>
+        <input class="input-content" type="text" id="method_input" name="method_input" required><br>
+        <div class="view-3">
+          <div class="text-wrapper-6" id="total_cost">0 ₽</div>
+          <input class="view-4" type="submit" value="Создать заказ">
+        </div>  
+    
+      </form>
+    </div>
+    
+    <script>
+      const menuInput = document.getElementById("menu_input");
+      const addressInput = document.getElementById("address_input");
+      const totalCost = document.getElementById("total_cost");
+    
+      // Обработчик события ввода
+      menuInput.addEventListener("input", updateTotalCost);
+      addressInput.addEventListener("input", updateTotalCost);
+    
+      function updateTotalCost() {
+        // Получаем значения из полей формы
+        const menu = menuInput.value;
+        const address = addressInput.value;
+        
+        // Выполняем асинхронный запрос к серверу для получения общей стоимости
+        fetch(`/calculate_total_cost?menu=${menu}&address=${address}`)
+          .then(response => response.json())
+          .then(data => {
+            // Обновляем отображение общей суммы
+            totalCost.textContent = `${data.totalCost} ₽`;
+          });
+      }
+    </script>
+    
+    
+    
+  </body>
+</html>

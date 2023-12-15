@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Заказ доставки</title>
+    <link rel="stylesheet" href="static/css/styleguide2.css"/>
+    <link rel="stylesheet" href="static/css/style3.css"/>
+</head>
+
+<body>
+<div class="mmain">
+    <form action="/" method="post">
+        <div class="ssidebar">
+            <div class="sushi">
+                <div class="title">Суши Байрам</div>
+
+                <div class="date">&nbsp;👋</div>
+            </div>
+
+
+            <div class="div">
+                <div class="frame">
+                    <div class="text-wrapper">НОМЕР ТЕЛЕФОНА</div>
+                </div>
+                <input class="view text-wrapper-3" type="text" id="tel_input" name="tel_input" required>
+            </div>
+            <div class="div">
+                <div class="frame">
+                    <div class="text-wrapper">ЗАКАЗ</div>
+                </div>
+                <textarea class="vieww text-wrapper-3 textarea-autoheight" id="menu_input" name="menu_input"
+                          required></textarea>
+            </div>
+            <div class="div">
+                <div class="frame">
+                    <div class="text-wrapper">АДРЕС</div>
+                </div>
+                <input class="view text-wrapper-3" type="text" id="address_input" name="address_input" required>
+            </div>
+            <div class="div">
+                <div class="frame">
+                    <div class="text-wrapper">НА СКОЛЬКО ЧЕЛОВЕК</div>
+                </div>
+                <input class="view text-wrapper-3" type="text" id="clientsnumber_input" name="clientsnumber_input"
+                       required>
+            </div>
+            <div class="div">
+                <div class="frame">
+                    <div class="text-wrapper">МЕТОД ОПЛАТЫ</div>
+                </div>
+                <input class="view text-wrapper-3" type="text" id="method_input" name="method_input" required>
+            </div>
+
+            <div class="text-wrapper-6" id="total_cost">0 ₽</div>
+            <div class="div">
+                <input class="view2 label-2" type="submit" value="Создать заказ">
+            </div>
+        </div>
+
+    </form>
+
+    <div class="bbody" id="dishesContainer"></div>
+
+</div>
+
+<script>
+    // Отправляем AJAX-запрос на сервер для получения списка блюд
+    fetch('/get_dishes')
+      .then(response => response.json())
+      .then(data => {
+        // Создаем кнопки для каждого блюда
+        const dishesContainer = document.getElementById('dishesContainer');       // id="dishesContainer" для html
+        data.dishes.forEach(dish => {
+          const dishButton = document.createElement('div');
+          dishButton.className = 'frame-3';
+          dishButton.innerHTML = `<div class="text-wrapper-4">${dish}</div>`;
+          dishButton.addEventListener('click', () => insertText(dish));
+          dishesContainer.appendChild(dishButton);
+        });
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Остальной ваш JavaScript код...
+</script>
+  
+
+<script>
+    // Добавляем JavaScript-функцию для вставки текста в поле ввода
+    function insertText(text) {
+      const menuInput = document.getElementById("menu_input");
+
+      // Получаем текущее значение поля ввода
+      let currentValue = menuInput.value;
+
+      // Проверяем, есть ли уже текст в поле ввода
+      if (currentValue) {
+        // Если есть, добавляем новый текст после запятой с пробелом
+        currentValue += ', ' + text;
+      } else {
+        // Если нет, устанавливаем новый текст
+        currentValue = text;
+      }
+
+      // Вставляем текст в поле ввода
+      menuInput.value = currentValue;
+
+      // Вызываем функцию для обновления общей суммы
+      updateTotalCost();
+    }
+</script>
+
+
+<script>
+    const menuInput = document.getElementById("menu_input");
+    const addressInput = document.getElementById("address_input");
+    const totalCost = document.getElementById("total_cost");
+
+    // Обработчик события ввода
+    menuInput.addEventListener("input", updateTotalCost);
+    addressInput.addEventListener("input", updateTotalCost);
+
+    function updateTotalCost() {
+      // Получаем значения из полей формы
+      const menu = menuInput.value;
+      const address = addressInput.value;
+
+      console.log("Sending request with menu:", menu, "and address:", address);
+
+      // Выполняем асинхронный запрос к серверу для получения общей стоимости
+      fetch(`/calculate_total_cost?menu=${menu}&address=${address}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log("Received response data:", data);
+
+          // Обновляем отображение общей суммы
+          totalCost.textContent = `${data.totalCost} ₽`;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
+
+</body>
+
+</html>

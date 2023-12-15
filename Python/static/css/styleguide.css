@@ -1,0 +1,8 @@
+:root {
+  --input-placeholder-font-family: "Inter-Regular", Helvetica;
+  --input-placeholder-font-weight: 400;
+  --input-placeholder-font-size: 16px;
+  --input-placeholder-letter-spacing: 0px;
+  --input-placeholder-line-height: normal;
+  --input-placeholder-font-style: normal;
+}

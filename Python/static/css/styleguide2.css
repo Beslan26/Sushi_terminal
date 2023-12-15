@@ -1,0 +1,14 @@
+:root {
+    --text-lighter: rgba(224, 230, 233, 1);
+    --labelsprimary-dark: rgba(255, 255, 255, 1);
+    --grayswhite: rgba(255, 255, 255, 1);
+    --colorsblue: rgba(0, 122, 255, 1);
+    --fillstertiary-dark: rgba(118, 118, 128, 0.24);
+    --body-regular-font-family: "SFPro-Regular", Helvetica;
+    --body-regular-font-weight: 400;
+    --body-regular-font-size: 17px;
+    --body-regular-letter-spacing: -0.4000000059604645px;
+    --body-regular-line-height: 22px;
+    --body-regular-font-style: normal;
+  }
+  

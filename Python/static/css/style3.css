@@ -1,0 +1,320 @@
+body {
+  margin: 0px;
+  margin-left: 460px;
+  background-color: #000000; 
+}
+
+.mmain {
+    display: flex;
+    min-height: 100vh;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    background-color: #000000;
+  }
+  
+  .mmain .ssidebar {
+    width: 400px;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 30px;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-self: stretch;
+    background-color: #000000; 
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;    
+  }
+  
+  .mmain .sushi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .mmain .title {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 41px;
+  }
+  
+  .mmain .date {
+    position: relative;
+    align-self: stretch;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-lighter);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19.6px;
+  }
+  
+  .mmain .div {
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-self: stretch;
+  }
+  
+  .mmain .frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0px 15px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .mmain .text-wrapper {
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-weight: 500;
+    color: #696969;
+    font-size: 15px;
+    line-height: normal;
+    position: relative;
+    letter-spacing: 0;
+  }
+  
+  .mmain .view {
+    display: flex;
+    height: 44px;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+
+  .mmain .vieww {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+
+  .mmain .view2 {
+    height: 50px;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: #007AFF;
+    border-radius: 10px;
+    overflow: hidden;  }
+  
+  .mmain .div-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 10px 0px 0px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+  
+  .mmain .frame-wrapper {
+    display: flex;
+    height: 44px;
+    align-items: center;
+    gap: 15px;
+    padding: 0px 15px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+  }
+  
+  .mmain .frame-2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+  
+  .mmain .text-wrapper-3 {
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: normal;
+    position: relative;
+    letter-spacing: 0;
+  }
+  
+  .mmain .method {
+    display: flex;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: var(--fillstertiary-dark);
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  
+  .mmain .button {
+    background-color: #636366;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    all: unset;
+    box-sizing: border-box;
+  }
+  
+  .mmain .label {
+    flex: 1;
+    height: 18px;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    position: relative;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--labelsprimary-dark);
+    white-space: nowrap;
+  }
+  
+  .mmain .label-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    all: unset;
+    box-sizing: border-box;
+  }
+  
+  
+  .mmain .label-2 {
+    font-size: 17px;
+    line-height: 22px;
+    position: relative;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    width: 100%;
+    color: var(--grayswhite);
+    white-space: nowrap;
+  }
+  
+  .mmain .bbody {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 5px 5px;
+    padding: 30px 15px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+  }
+  
+  .mmain .frame-3 {
+    display: inline-flex;
+    height: 50px;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 15px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    
+  }
+  
+  .mmain .text-wrapper-4 {
+    width: fit-content;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 20px;
+    white-space: nowrap;
+    position: relative;
+    letter-spacing: 0;
+  }
+  
+  input .view {
+    height: 44px;
+    width: 100%;
+    flex: 0;
+
+  }
+  input {
+    width: 100%;
+  }
+
+  .text-wrapper-6 {
+    position: relative;
+    width: 350px;
+    margin-top: -1px;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .textarea-autoheight {
+    height: auto;
+    overflow-y: hidden;  /* Чтобы скрыть вертикальный скроллбар */
+    resize: none;
+
+  }
+  

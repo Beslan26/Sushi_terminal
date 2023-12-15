@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>История заказов</title>
+    <link rel="stylesheet" href="static/css/global.css" />
+    <link rel="stylesheet" href="static/css/style2.css" />
+</head>
+<body>
+    <div class="screen">
+        <div class="view">
+          <div class="div">
+            <div class="text-wrapper">Заказы</div>
+            <div class="text-wrapper-2">Суши Байрам 👋</div>
+          </div>
+          <div class="view-2">
+            <div class="plus-outline">
+              <a href="/">
+                <img class="vector" src="static/img/vector.svg" />
+              </a>
+            </div>
+            <a href="/">
+              <div class="frame"><div class="text-wrapper-3">Новый заказ</div></div>
+            </a>
+          </div>
+        </div>
+
+      
+    <table>
+        <tr>
+            <th class="text-wrapper-4">Номер</th>
+            <th class="text-wrapper-4">Телефон</th>
+            <th class="text-wrapper-4">Заказ</th>
+            <th class="text-wrapper-4">Гостей</th>
+            <th class="text-wrapper-4">Адрес</th>
+            <th class="text-wrapper-4">Общая стоимость</th>
+            <th class="text-wrapper-4">Дата и время</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td class="text-wrapper-5">{{ order.id }}</td>
+            <td class="text-wrapper-5">{{ order.phone }}</td>
+            <td class="text-wrapper-5">{{ order.menu_items }}</td>
+            <td class="text-wrapper-5">{{ order.num_clients }}</td>
+            <td class="text-wrapper-5">{{ order.address }}</td>
+            <td class="text-wrapper-5">{{ order.total_cost }} руб.</td>
+            <td class="text-wrapper-5">{{ order.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Вернуться к заказу</a>
+    </div>
+</body>
+</html>
