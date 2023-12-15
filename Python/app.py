@@ -175,11 +175,19 @@ def change_payment_status():
 @app.route('/get_dishes', methods=['GET'])
 def get_dishes():
     dishes = Dishes.query.all()
-    dishes_list = []
+    dishes_rolls_list = []
+    dishes_baked_list = []
+    dishes_classic_list = []
     for dish in dishes:
         if dish.dish_category == "Роллы":
-            dishes_list.append(dish.dish_name)
-    return jsonify({'dishes': dishes_list})
+            dishes_rolls_list.append(dish.dish_name)
+    for dish in dishes:
+        if dish.dish_category == "Запеченные":
+            dishes_baked_list.append(dish.dish_name)
+    for dish in dishes:
+        if dish.dish_category == "Классические":
+            dishes_classic_list.append(dish.dish_name)
+    return jsonify({'dishes_rolls': dishes_rolls_list,'dishes_baked': dishes_baked_list, 'dishes_classic': dishes_classic_list})
 
 
 if __name__ == '__main__':
